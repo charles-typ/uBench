@@ -26,7 +26,7 @@ help::
 	$(ECHO) ""
 
 # Points to top directory of Git repository
-COMMON_REPO = ../../../../../
+COMMON_REPO = ../../../../../../
 PWD = $(shell readlink -f .)
 ABS_COMMON_REPO = $(shell readlink -f $(COMMON_REPO))
 
@@ -101,7 +101,7 @@ $(BUILD_DIR)/ubench.xclbin: $(BINARY_CONTAINER_ubench_OBJS)
 
 # Building Host
 $(EXECUTABLE): check-xrt $(HOST_SRCS) $(HOST_HDRS)
-	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS)
+	$(CXX) $(CXXFLAGS) $(HOST_SRCS) $(HOST_HDRS) -o '$@' $(LDFLAGS) -I/home/yupeng/Documents/Xilinx/Vitis_HLS/2022.1/include/
 
 emconfig:$(EMCONFIG_DIR)/emconfig.json
 $(EMCONFIG_DIR)/emconfig.json:
